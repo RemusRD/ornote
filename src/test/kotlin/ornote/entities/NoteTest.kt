@@ -1,15 +1,14 @@
 package ornote.entities
 
-import org.hamcrest.CoreMatchers
 import org.hamcrest.core.Is.`is`
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.*
 import org.junit.Assert.*
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
 
 class NoteTest : Spek({
-    context("A note"){
+    describe("A note"){
         val note = Note(Author("123", "Omelkor"), "hola", "test")
-        on("Doing nothing"){
+        context("Doing nothing"){
             it("should not change state"){
                 assertThat(note.title, `is`("hola"))
             }
